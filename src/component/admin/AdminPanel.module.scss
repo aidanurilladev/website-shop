@@ -1,0 +1,229 @@
+.adminPanel {
+  background: #ece6d3;
+  padding: 40px 0;
+
+  .loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    .spinner {
+      width: 50px;
+      height: 50px;
+      border: 5px solid #771011;
+      border-top: 5px solid transparent;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  }
+
+  .addForm {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    margin-bottom: 40px;
+    box-shadow: 0 2px 10px rgba(34, 23, 18, 0.1);
+
+    h2 {
+      color: #221712;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #771011;
+      padding-bottom: 10px;
+    }
+
+    .formGroup {
+      margin-bottom: 20px;
+
+      label {
+        display: block;
+        margin-bottom: 8px;
+        color: #221712;
+      }
+
+      input, textarea, .select {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #c0bfb2;
+        border-radius: 4px;
+        font-size: 16px;
+      }
+
+      textarea {
+        min-height: 100px;
+        resize: vertical;
+      }
+    }
+
+    .imageUpload {
+      margin-bottom: 20px;
+
+      .fileInput {
+        margin-bottom: 15px;
+      }
+
+      .previewContainer {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+      }
+
+      .previewItem {
+        position: relative;
+
+        .removeImageBtn {
+          position: absolute;
+          top: 5px;
+          right: 5px;
+          background: rgba(255, 0, 0, 0.7);
+          color: white;
+          border: none;
+          border-radius: 50%;
+          width: 25px;
+          height: 25px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          transition: background 0.3s;
+
+          &:hover {
+            background: rgba(255, 0, 0, 0.9);
+          }
+        }
+      }
+    }
+
+    .submitBtn {
+      background: #771011;
+      color: #ece6d3;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s;
+
+      &:hover {
+        background: darken(#771011, 10%);
+      }
+    }
+  }
+
+  .productsList {
+    h2 {
+      color: #221712;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #771011;
+      padding-bottom: 10px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 24px;
+    }
+
+    .productCard {
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(34, 23, 18, 0.1);
+      transition: transform 0.3s;
+
+      &:hover {
+        transform: translateY(-5px);
+      }
+
+      .imageContainer {
+        position: relative;
+        width: 100%;
+        height: 300px;
+      }
+
+      .productInfo {
+        padding: 20px;
+
+        h3 {
+          color: #221712;
+          margin-bottom: 10px;
+        }
+
+        .category {
+          color: #6f635b;
+          margin-bottom: 10px;
+        }
+
+        .description {
+          color: #221712;
+          margin-bottom: 15px;
+        }
+
+        .additionalImages {
+          display: flex;
+          gap: 10px;
+          margin-bottom: 15px;
+
+          .thumbnailContainer {
+            border: 2px solid transparent;
+            border-radius: 4px;
+            overflow: hidden;
+            transition: border-color 0.3s;
+
+            &:hover {
+              border-color: #771011;
+            }
+          }
+        }
+      }
+
+      .deleteBtn {
+        background: #771011;
+        color: #ece6d3;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background 0.3s;
+
+        &:hover {
+          background: darken(#771011, 10%);
+        }
+      }
+    }
+  }
+
+  // Responsive Tasarım
+  @media (max-width: 768px) {
+    .productsList {
+      .grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 16px;
+      }
+
+      .productCard {
+        .imageContainer {
+          height: 250px;
+        }
+
+        .productInfo {
+          padding: 15px;
+
+          .additionalImages {
+            gap: 5px;
+
+            .thumbnailContainer {
+              width: 40px;
+              height: 40px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

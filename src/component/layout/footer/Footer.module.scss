@@ -1,0 +1,134 @@
+.footer {
+  background: #221712;
+  padding: 60px 0 20px;
+  color: #ece6d3;
+
+  .content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+    margin-bottom: 40px;
+
+    @media (max-width: 1024px) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+    }
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+
+    h3 {
+      color: #c0bfb2;
+      font-size: 20px;
+      margin-bottom: 24px;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -8px;
+        left: 0;
+        width: 40px;
+        height: 2px;
+        background: #771011;
+      }
+    }
+
+    .info {
+      .contactItem {
+        margin-bottom: 16px;
+
+        p {
+          color: #6f635b;
+          margin-bottom: 4px;
+          font-size: 14px;
+        }
+
+        a {
+          color: #ece6d3;
+          text-decoration: none;
+          transition: color 0.3s ease;
+          font-size: 15px;
+
+          &:hover {
+            color: #771011;
+          }
+        }
+      }
+    }
+
+    .navigation {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      .linkA {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        a {
+          color: #ece6d3;
+          text-decoration: none;
+          transition: color 0.3s ease;
+          font-size: 15px;
+
+          &:hover {
+            color: #771011;
+          }
+        }
+      }
+    }
+
+    .schedule {
+      p {
+        color: #6f635b;
+        margin-bottom: 12px;
+        font-size: 14px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      h3 {
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &::before {
+          content: "+";
+          font-size: 24px;
+          transition: transform 0.3s ease;
+        }
+
+        &.open {
+          &::before {
+            content: "−";
+            transform: rotate(180deg);
+          }
+        }
+      }
+
+      .sectionContent {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+      }
+
+      .sectionContent.open {
+        max-height: 500px;
+      }
+    }
+  }
+
+  .bottom {
+    padding-top: 20px;
+    border-top: 1px solid #6f635b;
+
+    .copyright {
+      text-align: center;
+      color: #6f635b;
+      font-size: 14px;
+    }
+  }
+}
