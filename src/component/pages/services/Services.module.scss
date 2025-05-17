@@ -1,0 +1,376 @@
+.services {
+  background: #ece6d3;
+  padding: 80px 0;
+
+  .title {
+    text-align: center;
+    font-size: 48px;
+    color: #221712;
+    margin-bottom: 60px;
+    position: relative;
+    font-family: "Caviar Dreams Bold", sans-serif;
+    animation: fadeInUp 0.8s ease-out;
+
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background: #771011;
+    }
+  }
+
+  .servicesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+  }
+
+  .serviceCard {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(34, 23, 18, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+
+    &.active {
+      background: #771011;
+      color: #ece6d3;
+
+      h3, p {
+        color: #ece6d3;
+      }
+
+      .serviceIcon {
+        svg {
+          path {
+            stroke: #ece6d3;
+          }
+        }
+      }
+
+      .readMore {
+        color: #ece6d3;
+      }
+    }
+
+    .serviceIcon {
+      margin-bottom: 20px;
+      
+      svg {
+        path {
+          transition: stroke 0.3s ease;
+        }
+      }
+    }
+
+    h3 {
+      font-size: 22px;
+      color: #221712;
+      margin-bottom: 15px;
+      font-family: "Caviar Dreams Bold", sans-serif;
+      transition: color 0.3s ease;
+    }
+
+    p {
+      font-size: 16px;
+      color: #6f635b;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      transition: color 0.3s ease;
+    }
+
+    .readMore {
+      display: flex;
+      align-items: center;
+      color: #771011;
+      font-weight: 500;
+      font-size: 14px;
+      transition: color 0.3s ease;
+
+      svg {
+        margin-left: 8px;
+        transition: transform 0.3s ease;
+      }
+
+      &:hover svg {
+        transform: translateX(5px);
+      }
+    }
+  }
+
+  .serviceDetail {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 80px;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(34, 23, 18, 0.15);
+
+    .detailContent {
+      padding: 40px;
+
+      h2 {
+        font-size: 32px;
+        color: #221712;
+        margin-bottom: 20px;
+        font-family: "Caviar Dreams Bold", sans-serif;
+      }
+
+      p {
+        font-size: 18px;
+        color: #6f635b;
+        line-height: 1.6;
+        margin-bottom: 30px;
+      }
+
+      .featureList {
+        margin-bottom: 30px;
+
+        .feature {
+          display: flex;
+          align-items: center;
+          margin-bottom: 15px;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+
+          .featureIcon {
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+
+          p {
+            margin-bottom: 0;
+            font-size: 16px;
+          }
+        }
+      }
+
+      .orderBtn {
+        display: inline-block;
+        padding: 16px 40px;
+        background: #771011;
+        color: #ece6d3;
+        text-decoration: none;
+        border-radius: 4px;
+        font-size: 18px;
+        transition: background 0.3s;
+
+        &:hover {
+          background: darken(#771011, 10%);
+        }
+      }
+    }
+
+    .detailImage {
+      position: relative;
+
+      .imageWrapper {
+        position: relative;
+        height: 100%;
+        min-height: 500px;
+      }
+    }
+  }
+
+  .approachSection {
+    margin-bottom: 80px;
+
+    h2 {
+      text-align: center;
+      font-size: 36px;
+      color: #221712;
+      margin-bottom: 40px;
+      position: relative;
+      font-family: "Caviar Dreams Bold", sans-serif;
+
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 3px;
+        background: #771011;
+      }
+    }
+
+    .approachContent {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .approachImagesGrid {
+      display: grid;
+      grid-template-rows: repeat(2, 1fr);
+      gap: 20px;
+      height: 100%;
+
+      .approachImageWrapper {
+        position: relative;
+        height: 200px;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(34, 23, 18, 0.1);
+      }
+    }
+
+    .approachText {
+      .approachItem {
+        margin-bottom: 30px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        h3 {
+          font-size: 24px;
+          color: #221712;
+          margin-bottom: 15px;
+          font-family: "Caviar Dreams Bold", sans-serif;
+        }
+
+        p {
+          font-size: 16px;
+          color: #6f635b;
+          line-height: 1.6;
+        }
+      }
+    }
+  }
+
+  .cta {
+    background: #221712;
+    color: #ece6d3;
+    padding: 60px;
+    border-radius: 12px;
+    text-align: center;
+
+    h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      font-family: "Caviar Dreams Bold", sans-serif;
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 30px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .contactBtn {
+      display: inline-block;
+      padding: 16px 40px;
+      background: #771011;
+      color: #ece6d3;
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 18px;
+      transition: background 0.3s;
+
+      &:hover {
+        background: darken(#771011, 10%);
+      }
+    }
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (max-width: 1024px) {
+    padding: 60px 0;
+
+    .title {
+      font-size: 36px;
+      margin-bottom: 40px;
+    }
+
+    .serviceDetail {
+      grid-template-columns: 1fr;
+      gap: 0;
+
+      .detailImage {
+        order: -1;
+
+        .imageWrapper {
+          min-height: 300px;
+        }
+      }
+
+      .detailContent {
+        padding: 30px;
+
+        h2 {
+          font-size: 28px;
+        }
+
+        p {
+          font-size: 16px;
+        }
+      }
+    }
+
+    .approachSection {
+      .approachContent {
+        grid-template-columns: 1fr;
+      }
+
+      h2 {
+        font-size: 28px;
+      }
+    }
+
+    .cta {
+      padding: 40px 20px;
+
+      h2 {
+        font-size: 28px;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .servicesGrid {
+      grid-template-columns: 1fr;
+    }
+
+    .approachImagesGrid {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 1fr;
+
+      .approachImageWrapper {
+        height: 150px;
+      }
+    }
+  }
+}

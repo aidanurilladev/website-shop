@@ -11,11 +11,11 @@ const Header: FC = () => {
 
   const navLinks = [
     { title: "Главная", path: "/" },
-    { title: "О компании", path: "/about" },
+    { title: "О компании", path: "#about" },
     { title: "Каталог", path: "/catalog" },
-    { title: "Наши услуги", path: "/services" },
+    { title: "Наши услуги", path: "#services" },
     { title: "Карта", path: "#map" },
-    { title: "Контакты", path: "#footer" }
+    { title: "Контакты", path: "/contact" }
   ];
 
   // Mobil menüyü açma/kapama fonksiyonu

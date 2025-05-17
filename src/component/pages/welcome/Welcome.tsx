@@ -8,7 +8,7 @@ import s from "./Welcome.module.scss";
 interface IProduct {
   id: string;
   title: string;
-  images: string[]; 
+  images: string[];
   category: string;
   description: string;
 }
@@ -16,16 +16,16 @@ interface IProduct {
 const Welcome = () => {
   const [isClient, setIsClient] = useState(false);
   const [products] = useLocalStorage<IProduct[]>(
-    "products", 
-    [], 
+    "products",
+    [],
     (storedValue: any[]) => {
       // Eski verileri yeni formata dönüştür
       return storedValue.map((product: any) => {
         // Eğer 'image' varsa 'images' dizisine çevir
-        if (product && 'image' in product && !('images' in product)) {
+        if (product && "image" in product && !("images" in product)) {
           return {
             ...product,
-            images: product.image ? [product.image] : []
+            images: product.image ? [product.image] : [],
           };
         }
         return product;
@@ -40,10 +40,8 @@ const Welcome = () => {
   }, []);
 
   // Son eklenen 5 ürünü al
-  const sliderProducts = isClient 
-    ? [...products]
-        .sort((a, b) => Number(b.id) - Number(a.id))
-        .slice(0, 5)
+  const sliderProducts = isClient
+    ? [...products].sort((a, b) => Number(b.id) - Number(a.id)).slice(0, 5)
     : [];
 
   // Slider otomatik geçiş
@@ -67,8 +65,8 @@ const Welcome = () => {
       <div className="container">
         <div className={s.hero}>
           <div className={s.heroContent}>
-            <h1>Создайте уютный дом вместе с нами</h1>
-            <p>Мебель премиум качества для вашего комфорта</p>
+            <h1>Выразите свой стиль вместе с нами</h1>
+            <p>Современная и стильная одежда для вашего образа</p>
             <Link href="/catalog" className={s.catalogBtn}>
               Смотреть каталог
             </Link>
